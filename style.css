@@ -1,0 +1,277 @@
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+header {
+   position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    z-index: 999;
+}
+   
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+/* hamburger */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+    position: relative;
+}
+
+.hamburger .line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #000000;
+    border-radius: 3px;
+    position: absolute;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hamburger .top {
+    top: 0;
+}
+
+.hamburger .middle {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger .bottom {
+    bottom: 0;
+}
+
+#toggle-menu {
+    display: none;
+}
+
+#toggle-menu:checked + .hamburger .top {
+    transform: rotate(45deg);
+    top: 50%;
+    z-index: 2;
+}
+
+#toggle-menu:checked + .hamburger .middle {
+    opacity: 0;
+    z-index: 2;
+}
+
+#toggle-menu:checked + .hamburger .bottom {
+    transform: rotate(-45deg);
+    top: 50%;
+    z-index: 2;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 100px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background: rgba(255, 255, 255, 0.95);
+        height: 100vh;
+        width: 70%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #toggle-menu:checked ~ .nav-links {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+}
+#home {
+    position: relative;
+    background: url('https://wallpapershome.com/images/pages/pic_h/25609.jpg'); /* fit background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(0, 100%, 100%);
+    text-align: center;
+    padding: 0 2rem;
+    z-index: 1;
+}
+
+#home::before {
+     /* content: '';  */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(2, 10, 101, 0.6);
+}
+.home-content p{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: aliceblue;
+
+}
+.home-content a {
+    background-color: rgb(92, 122, 83);
+    font-size: 1rem;
+    margin: 1rem;
+    padding: 0.8rem;
+ 
+    color: white;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    margin: 3rem;
+
+}
+.icons img{
+    border-radius: 50%;
+    border: 2px solid grey;
+    width: 50px;
+}
+.featured {
+    background-color: rgb(231, 236, 236);
+    text-align: center;
+    padding: 6rem;
+    /* fit image and image size */
+}
+/* need more understanding */
+.featured h1::after {
+    content: ''; /*?*/
+    width: 100px;
+    height: 4px;
+    background: rgb(115, 197, 226);
+    display: block;
+    margin: 1rem auto 0;
+}
+.featured h1 {
+    padding:2rem ;
+}
+
+.featured video{
+    width: 100%;
+    height: fit-content;
+    margin: 20px auto;
+}  
+
+.blog-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 40px;
+    gap: 40px;
+}
+
+ .b1 {
+   background-image: url("https://i.pinimg.com/736x/c9/05/fc/c905fc5e38931d6785e4c44fa61b7ee0.jpg");
+   background-size:cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+.b2 {
+    background-image: url("https://pngmagic.com/product_images/hd-nature-background_HB3.jpeg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bcontent {
+    width: 50%;
+    background-color: rgba(240, 248, 255, 0.74);
+   text-align: center;
+    padding: 2rem;
+}
+.bcontent h3 {
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.bcontent p{
+    margin-bottom: 1rem;
+  
+}
+.btn1 {
+    border: 2px solid rgb(108, 180, 216);
+    border-radius: 3px;
+    padding: 2px;
+    color: rgb(0, 115, 230);
+  
+}
+.he{
+    text-align: center;
+}
+.he h1::after {
+    content: ''; /*?*/
+    width: 100px;
+    height: 4px;
+    background: rgb(142, 207, 231);
+    display: block;
+    margin: 1rem auto 0;}
+.he p{
+    margin: 1rem;
+}
+.he .btn1
+{
+    border: 2px solid rgb(108, 180, 216);
+    border-radius: 3px;
+    padding: 6px;
+    color: rgb(39, 238, 238);
+}
+footer {
+    background-color: rgb(213, 210, 210);
+    padding: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+footer .footer-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+   
+
+}
+footer a {
+    text-decoration: underline;
+    color: rgb(90, 175, 250);
+}
